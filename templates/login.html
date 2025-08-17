@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Jersey+10&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+</head>
+<body style="background-image:none">
+    <div class="menu">
+        <div class="mf">
+            <img src="../static/imgs/monkeyfront.png" alt="">
+        </div>
+        <div class="mb-1"></div>
+        <div class="mb-2"></div>
+        <div class="mr">
+            <div class="upm-menu">
+                <div class="upm-mi">
+                    <div class="mi-1"></div>
+                    <div class="mi-2"></div>
+                </div>
+                <div class="upm-mt">
+                    <p>MINET.GOV.COM</p>
+                    <p>official government website for upm</p>
+                </div>
+            </div>
+            <div class="item-menu">
+                <div class="home-m">
+                    <p>home</p>
+                </div>
+                <div class="about-m">
+                    <p>about</p>
+                </div>
+                <div class="mycitizen-m">
+                    <p>mycitizen</p>
+                </div>
+                <div class="space"></div>
+                <div class="services-m">
+                    <p>services</p>
+                </div>
+                <div class="contact-m">
+                    <p>contact us</p>
+                </div>
+            </div>
+            <div class="s-bar">
+                <div class="s-1b"></div>
+                <div class="s-2b"></div>
+                <img src="../static/imgs/searchbar.svg" alt="">
+            </div>
+            <div class="l-bar">
+                <div class="l-1b"></div>
+                <div class="l-2b"></div>
+                <p>Login to MYCITIZEN</p>
+            </div>
+        </div>
+    </div>
+    <div class="loginmain">
+        <div class="registerfa">
+            <div class="reghead">
+                <p>SIGN IN</p>
+            </div>
+            <form id = "form">
+                <div class="regbox">
+                    <div class="smal"><p>Enter Legal Name</p></div>
+                    <input type="text">
+                    <img src="../static/imgs/box.svg" alt="">
+                </div>
+                <div class="regbox">
+                    <div class="smal"><p>Enter Password</p></div>
+                    <input type="text">
+                    <img src="../static/imgs/box.svg" alt="">
+                </div>
+                <div class="regbox">
+                    <div class="smal"><p>Type the letter written in the box</p></div>
+                    <input type="text" id = "capa">
+                    <img src="../static/imgs/box2.svg" alt="">
+                </div>
+                <div class="boxs">
+                    <div class="bbox">
+                        <img src="../static/imgs/box5.svg" alt="">
+                        <p>BACK</p>
+                    </div>
+                    <div class="sbox">
+                        <img src="../static/imgs/box4.svg" alt="">
+                        <p>LOG IN TO ID</p>
+                        <input type="submit" value = "">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="capcha">
+            <div class="capsq">
+                <img alt="" id = "cimg">
+            </div>
+            <div class="capsfooter">
+                <p>CAPTCHA</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        const list = ["../static/imgs/m.png","../static/imgs/a.png","../static/imgs/e.png","../static/imgs/f.png","../static/imgs/w.png","../static/imgs/w.png"]
+        let img = list[Math.floor(Math.random()*list.length)]
+        document.getElementById("cimg").src = img;
+        let letter = (document.getElementById("cimg").src.split("/imgs/")[1]).split(".pn")[0]
+
+        document.getElementById("form").addEventListener("submit", (e) => {
+            if(document.getElementById("capa").value === letter) {} else {
+                e.preventDefault();
+                alert("Please enter the capcha correctly!")
+            }
+        })
+    </script>
+</body>
+</html>
