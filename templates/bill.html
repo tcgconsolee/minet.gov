@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Jersey+10&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
 </head>
-<body style="background-image:none">
+<body style="background-image:url(../static/imgs/bg2.png);">
     <div class="menu">
         <div class="mf">
             <img src="../static/imgs/monkeyfront.png" alt="">
@@ -59,67 +59,52 @@
             </div>
         </div>
     </div>
-    <div class="loginmain">
-        <div class="registerfa">
-            <div class="reghead">
-                <p>SIGN IN</p>
-            </div>
-            <form id = "form" method = "post">
-                <div class="regbox">
-                    <div class="smal"><p>Enter Legal Name</p></div>
-                    <input type="text" id="uname" name="uname" required>
-                    <img src="../static/imgs/box.svg" alt="">
-                </div>
-                <div class="regbox">
-                    <div class="smal"><p>Enter Password</p></div>
-                    <input type="text" id="psw" name="psw" required>
-                    <img src="../static/imgs/box.svg" alt="">
-                </div>
-                <div class="regbox">
-                    <div class="smal"><p>Type the letter written in the box</p></div>
-                    <input type="text" id = "capa" required>
-                    <img src="../static/imgs/box2.svg" alt="">
-                </div>
-                <div class="boxs">
-                    <div class="bbox">
-                        <img src="../static/imgs/box5.svg" alt="">
-                        <a href = "/register">CREATE ID</a>
-                    </div>
-                    <div class="sbox">
-                        <img src="../static/imgs/box4.svg" alt="">
-                        <p>LOG IN TO ID</p>
-                        <input type="submit" value = "">
-                    </div>
-                </div>
-            </form>
+    <div class="initquery">
+        <div class="billmonke">
+            <img src="../static/imgs/querymonke.png" alt="">
         </div>
-        <div class="capcha">
-            <div class="capsq">
-                <img alt="" id = "cimg">
-            </div>
-            <div class="capsfooter">
-                <p>CAPTCHA</p>
-            </div>
+        <div class="billhead">
+            <p>Pay Bill/Amount</p>
         </div>
+        <div class="billbank">
+            <p>authorised by CENTRAL BANK OF UPM</p>
+        </div>
+        <a href="/profile">
+            <div class="quback">
+                <p>BACK</p>
+            </div>
+        </a>
+        <div class="qubook">
+            <p>TO PAY: 92,390</p>
+        </div>
+        <form id = "billf">
+            <div class="iqrect">
+                <label for="type">Bank Name:</label>
+                <input type="text" name = "type" id = "type" maxlength="30" required><br>
+                <label for="name">Account ID:</label>
+                <input type="text" name = "name" id = "name" maxlength="20" required><br><br>
+                <label for="details">ENTER AMOUNT IN WORDS:</label>
+                <input type="text" name = "details" id = "details" maxlength="200" style="width:50vw;" required><br><br>
+            </div>
+            <div class="mcline" style = "bottom: 2.5vw;width: 93.75%">
+                    <div class="qulgrid">
+                        <div>
+                            <input type="submit" value = "SEND" style="cursor:pointer;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
     </div>
     <script>
-        const list = ["../static/imgs/m.png","../static/imgs/a.png","../static/imgs/e.png","../static/imgs/f.png","../static/imgs/w.png","../static/imgs/w.png"]
-        let img = list[Math.floor(Math.random()*list.length)]
-        document.getElementById("cimg").src = img;
-        let letter = (document.getElementById("cimg").src.split("/imgs/")[1]).split(".pn")[0]
-
-        document.getElementById("form").addEventListener("submit", (e) => {
-            if(document.getElementById("capa").value === letter) {} else {
+        document.getElementById("billf").addEventListener("submit", (e) => {
+            let psw = prompt("Enter your password to confirm your identity.")
+            if(psw !== {{ current_user.password }}) {
                 e.preventDefault();
-                alert("Please enter the capcha correctly!")
+                alert("Incorrect password. You will be logged out once you click OK.")
+                window.location.href="/logout"
             }
         })
-    </script>
-    <script>
-        const message = {{ value | tojson }};
-        if (message) {
-            alert(message);
-        }
     </script>
 </body>
 </html>

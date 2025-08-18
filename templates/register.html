@@ -14,8 +14,6 @@
         <div class="mf">
             <img src="../static/imgs/monkeyfront.png" alt="">
         </div>
-        <div class="mb-1"></div>
-        <div class="mb-2"></div>
         <div class="mr">
             <div class="upm-menu">
                 <div class="upm-mi">
@@ -29,20 +27,20 @@
             </div>
             <div class="item-menu">
                 <div class="home-m">
-                    <p>home</p>
+                    <a href = "/#home">home</a>
                 </div>
                 <div class="about-m">
-                    <p>about</p>
+                    <a href = "/#about">about</a>
                 </div>
                 <div class="mycitizen-m">
-                    <p>mycitizen</p>
+                    <a href = "/#mycitizen">mycitizen</a>
                 </div>
                 <div class="space"></div>
                 <div class="services-m">
-                    <p>services</p>
+                    <a href = "/#services">services</a>
                 </div>
                 <div class="contact-m">
-                    <p>contact us</p>
+                    <a href = "/#contact">contact us</a>
                 </div>
             </div>
             <div class="s-bar">
@@ -53,7 +51,11 @@
             <div class="l-bar">
                 <div class="l-1b"></div>
                 <div class="l-2b"></div>
-                <p>Login to MYCITIZEN</p>
+                {% if current_user.is_authenticated %}
+                    <a href = "/profile">Go to MYCITIZEN</a>
+                {% else %}
+                    <a href = "/login">Login to MYCITIZEN</a>
+                {% endif %}
             </div>
         </div>
     </div>
@@ -62,20 +64,20 @@
             <div class="reghead">
                 <p>REGISTER</p>
             </div>
-            <form id = "form">
+            <form id = "form" method = "post" enctype="multipart/form-data">
                 <div class="regbox">
                     <div class="smal"><p>Enter Legal Name</p></div>
-                    <input type="text">
+                    <input type="text" id="uname" name="uname" required>
                     <img src="../static/imgs/box.svg" alt="">
                 </div>
-                <div class="regbox">
-                    <div class="smal"><p>Create Password</p></div>
-                    <input type="text">
+                <div class="regbox"> 
+                    <div class="smal"><p>Enter Password</p></div>
+                    <input type="text" id="psw" name="psw" required>
                     <img src="../static/imgs/box.svg" alt="">
                 </div>
                 <div class="regbox">
                     <div class="smal"><p>Type the letter written in the box</p></div>
-                    <input type="text" id = "capa">
+                    <input type="text" id = "capa" required>
                     <img src="../static/imgs/box2.svg" alt="">
                 </div>
                 <div class="boxs">
@@ -83,7 +85,7 @@
                         <img src="../static/imgs/box3.svg" alt="">
                         <p>UPLOAD</p>
                         <label>
-                            <input type="file" style="display:none" accept="image/png, image/svg, image/jpeg">
+                            <input type="file" style="display:none" accept="image/png, image/svg, image/jpeg" name="file" id="file">
                         </label>
                     </div>
                     <div class="sbox">
@@ -115,6 +117,12 @@
                 alert("Please enter the capcha correctly!")
             }
         })
+    </script>
+        <script>
+        const message = {{ value | tojson }};
+        if (message) {
+            alert(message);
+        }
     </script>
 </body>
 </html>

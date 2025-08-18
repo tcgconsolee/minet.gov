@@ -21,6 +21,7 @@ body {
     transform: translate(-50%);
     width: 80vw;
     height: 7.5vh;
+    border: #000 2px solid;
 }
 [class$="-1"],[class$="-2"] {
     background: black;
@@ -112,6 +113,12 @@ p {
     align-items: center;
     justify-content: center;
 }
+.menu a {
+    color: black;
+}
+.menu a:visited {
+    color: black;
+}
 .mf {
     position: absolute;
     left: 54.5%;
@@ -140,6 +147,16 @@ p {
     top: 50%;
     left: 25%;
     transform: translate(-50%, -50%);
+    font-family: 'Jersey 10';
+    font-size: 1vw;
+}
+.l-bar a {
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-wrap: nowrap;
 }
 [class$="-1b"], [class$="-2b"] {
     position: absolute;
@@ -147,6 +164,7 @@ p {
     top: 50%;
     transform: translate(-50%, -50%);
     background:#3DA3A7;
+    z-index: 1;
 }
 [class$="-1b"] {
     width: 100%;
@@ -454,9 +472,12 @@ p {
     transform: translate(-50%);
     width: 90%;
     display: grid;
-    grid-template-rows: 15% 20% 20% 20% 20%;
-    row-gap: 3%;
-    height: 42vh;
+    grid-auto-flow: row;
+    grid-template-rows: 6.3vh repeat(auto-fill, 8.4vh);
+    row-gap: 1.26vh;
+    height: 44vh;
+    overflow-y: auto;
+    overflow-x:hidden;
     font-family: 'Jersey 10';
 }
 .billgridrow {
@@ -512,6 +533,13 @@ p {
     cursor: pointer;
     opacity: 1;
     transition: opacity 250ms ease-in-out;
+}
+.billgridrow:nth-child(n+2) > .billgridcolumn:nth-child(3) > .queryrect  {
+    align-items: baseline;
+    padding-left:1.25vw;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 .ap {
     position: relative;
@@ -856,13 +884,29 @@ tr,td {
     column-gap: 2vw;
     height: 7.5vh
 }
-.mclgrid div {
+.qulgrid {
+    position: absolute;
+    display: grid;
+    right: 0;
+    grid-template-columns: 15vw;
+    font-family: 'Jersey 10';
+    font-size: 1.5vw;
+    color:#F7ECE5;
+    column-gap: 2vw;
+    height: 7.5vh
+}
+.mclgrid div, .qulgrid div {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background: #000;
     letter-spacing: 0.1vw;
+}
+.qulgrid div input[type="submit"] {
+    color: #fff;
+    font-family: 'Jersey 10';
+    font-size: 2vw;
 }
 .a {
     position: relative;
@@ -983,6 +1027,7 @@ tr,td {
     left: 2.5vw;
     float: left;
     width: 93.375%;
+    border-top: 5px solid #000;
     border-left: 2px solid #000;
     border-bottom: 5px solid #000;
     border-right: 3px solid #000;
@@ -1177,15 +1222,15 @@ tr,td {
     letter-spacing: 0.1vw;
 }
 a {
-    color: white;
+    color: unset;
     text-decoration: none;
 }
 a:visited {
-    color: white;
+    color: unset;
     text-decoration: none;
 }
 a:active {
-    color: white;
+    color: unset;
     text-decoration: none;
 }
 .loginmain {
@@ -1299,9 +1344,12 @@ input:focus {
 .ubox {
     color: #fff;
 }
-.boxs > div p {
+.boxs > div p, .boxs > div a {
     position: absolute;
     margin-top: -0.5%;
+}
+.bbox a {
+    color: #000;
 }
 .sbox {
     color: #000;
@@ -1430,4 +1478,56 @@ input:focus {
     color:#DEFAFF;
     -webkit-text-stroke: #5AB4B5 0.75px;
     text-shadow: -4px 4px 1px #00000040;
+}
+.initquery {
+    position: relative;
+    top: 15vh;
+    width: 80vw;
+    left: 50%;
+    transform: translate(-50%);
+    height: 70vh;
+    box-shadow: #000 6px 6px 1px;
+    background: #F7ECE5;
+}
+.quback {
+    position: absolute;
+    left: 2.5vw;
+    top: 20vh;
+    padding: 0.5vw 3vw;
+    font-size: 1.25vw;
+    font-family: 'Jersey 10';
+    background:#3DA3A7;
+    border: 3px solid #000;
+}
+.qubook {
+    position: absolute;
+    right: 2.5vw;
+    top: 20vh;
+    padding: 0.5vw 3vw;
+    font-size: 1.25vw;
+    font-family: 'Jersey 10';
+    background:#3DA3A7;
+    border: 3px solid #000;
+}
+.iqrect {
+    position: absolute;
+    bottom: 5.5vw;
+    width: 93.75%;
+    height: 40%;
+    left: 50%;
+    transform: translate(-50%);
+    background:#3DA3A7;
+    border: #000 3px solid;
+    font-family: 'Jersey 10';
+    font-size: 1.5vw;
+}
+.iqrect label, .iqrect input {
+    position: relative;
+    left: 2.5vw;
+    top: 1vw;
+    font-family: 'Jersey 10';
+    font-size: 1.5vw;
+}
+.iqrect input {
+    margin-left: 1.5vw;
 }

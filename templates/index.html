@@ -16,8 +16,6 @@
         <div class="mf">
             <img src="../static/imgs/monkeyfront.png" alt="">
         </div>
-        <div class="mb-1"></div>
-        <div class="mb-2"></div>
         <div class="mr">
             <div class="upm-menu">
                 <div class="upm-mi">
@@ -31,20 +29,20 @@
             </div>
             <div class="item-menu">
                 <div class="home-m">
-                    <p>home</p>
+                    <a href = "/#home">home</a>
                 </div>
                 <div class="about-m">
-                    <p>about</p>
+                    <a href = "/#about">about</a>
                 </div>
                 <div class="mycitizen-m">
-                    <p>mycitizen</p>
+                    <a href = "/#mycitizen">mycitizen</a>
                 </div>
                 <div class="space"></div>
                 <div class="services-m">
-                    <p>services</p>
+                    <a href = "/#services">services</a>
                 </div>
                 <div class="contact-m">
-                    <p>contact us</p>
+                    <a href = "/#contact">contact us</a>
                 </div>
             </div>
             <div class="s-bar">
@@ -55,11 +53,15 @@
             <div class="l-bar">
                 <div class="l-1b"></div>
                 <div class="l-2b"></div>
-                <p>Login to MYCITIZEN</p>
+                {% if current_user.is_authenticated %}
+                    <a href = "/profile">Go to MYCITIZEN</a>
+                {% else %}
+                    <a href = "/login">Login to MYCITIZEN</a>
+                {% endif %}
             </div>
         </div>
     </div>
-    <div class="main">
+    <div class="main" id = "home">
         <div class="main-1"></div>
         <div class="main-2"></div>
         <div class="mmdle">
@@ -74,10 +76,10 @@
             </div>
             <div class="mainbtns">
                 <div class="learnmbtn">
-                    <p>LEARN MORE</p>
+                    <a href = "/#about" style="color:#000;opacity:0.5;">LEARN MORE</a>
                 </div>
                 <div class="joinbtn">
-                    <p>JOIN</p>
+                    <a href = "/login">JOIN</a>
                 </div>
             </div>
             <div class="monke">
@@ -85,7 +87,7 @@
             </div>
         </div>
     </div>
-    <div class="services">
+    <div class="services" id = "services">
         <div class="shead">
             <p>Our Services</p>
         </div>
@@ -95,18 +97,20 @@
         <div class="sgrid">
             <div class="srow">
                 <div class="scolumn">
-                    <div class="srect">
-                        <div class="uprect"></div>
-                        <div class="uprecttxt">
-                            <p>Bill Payment <br>Tracker</p>
+                    <a href="/profile#bill">
+                        <div class="srect">
+                            <div class="uprect"></div>
+                            <div class="uprecttxt">
+                                <p>Bill Payment <br>Tracker</p>
+                            </div>
+                            <div class="rectimg">
+                                <img src="../static/imgs/moneybag.png" alt="" style = "width:100%">
+                            </div>
+                            <div class="recttxt">
+                                <p>Easily view and pay all your bills in one place, from utilities to taxes. Get instant status updates and reminders to avoid missed payments.</p>
+                            </div>
                         </div>
-                        <div class="rectimg">
-                            <img src="../static/imgs/moneybag.png" alt="" style = "width:100%">
-                        </div>
-                        <div class="recttxt">
-                            <p>Easily view and pay all your bills in one place, from utilities to taxes. Get instant status updates and reminders to avoid missed payments.</p>
-                        </div>
-                    </div>
+                    </a>
                     <div class="sshadow"></div>
                 </div>
                 <div class="scolumn">
@@ -126,18 +130,20 @@
 
                 </div>
                 <div class="scolumn">
-                    <div class="srect">
-                        <div class="uprect"></div>
-                        <div class="uprecttxt">
-                            <p>Query <br>Tracker</p>
+                    <a href="/profile#query">
+                        <div class="srect">
+                            <div class="uprect"></div>
+                            <div class="uprecttxt">
+                                <p>Query <br>Tracker</p>
+                            </div>
+                            <div class="rectimg">
+                                <img src="../static/imgs/magniglass.png" alt="" style = "width:100%">
+                            </div>
+                            <div class="recttxt">
+                                <p>Check the status of your submitted queries in real time. Stay informed with clear progress updates at each stage.</p>
+                            </div>
                         </div>
-                        <div class="rectimg">
-                            <img src="../static/imgs/magniglass.png" alt="" style = "width:100%">
-                        </div>
-                        <div class="recttxt">
-                            <p>Check the status of your submitted queries in real time. Stay informed with clear progress updates at each stage.</p>
-                        </div>
-                    </div>
+                    </a>
                     <div class="sshadow"></div>
                 </div>
             </div>
@@ -158,18 +164,20 @@
                     <div class="sshadow"></div>
                 </div>
                 <div class="scolumn">
-                    <div class="srect">
-                        <div class="uprect"></div>
-                        <div class="uprecttxt">
-                            <p>Contact <br>Us</p>
+                    <a href="/#contact">
+                        <div class="srect">
+                            <div class="uprect"></div>
+                            <div class="uprecttxt">
+                                <p>Contact <br>Us</p>
+                            </div>
+                            <div class="rectimg">
+                                <img src="../static/imgs/telephone.png" alt="" style = "width:125%">
+                            </div>
+                            <div class="recttxt">
+                                <p>Submit questions, requests, or service issues directly to the concerned department. Get a unique reference ID for follow-up.</p>
+                            </div>
                         </div>
-                        <div class="rectimg">
-                            <img src="../static/imgs/telephone.png" alt="" style = "width:125%">
-                        </div>
-                        <div class="recttxt">
-                            <p>Submit questions, requests, or service issues directly to the concerned department. Get a unique reference ID for follow-up.</p>
-                        </div>
-                    </div>
+                    </a>
                     <div class="sshadow"></div>
                 </div>
                 <div class="scolumn">
@@ -190,7 +198,7 @@
             </div>
         </div>
     </div>
-    <div class="mycitizen">
+    <div class="mycitizen" id = "mycitizen">
         <div class="mchead">
             <p>MyCitizen</p>
         </div>
@@ -221,17 +229,30 @@
             </div>
         </div>
         <div class="mcline">
-            <div class="mclgrid">
-                <div>
-                    <p>LOG IN | SIGN IN</p>
-                </div>
-                <div>
-                    <p>SIGN UP | REGISTER</p>
-                </div>
+            
+                {% if current_user.is_authenticated %}
+                    <div class="mclgrid">
+                        <div>
+                            <a href = "/profile">GO TO MYCITIZEN</a>
+                        </div>
+                        <div>
+                            <a href = "/logout">LOGOUT OF MYCITIZEN</p>
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="mclgrid">
+                        <div>
+                            <a href = "/login">LOG IN | SIGN IN</a>
+                        </div>
+                        <div>
+                            <a href = "/register">SIGN UP | REGISTER</a>
+                        </div>
+                    </div>
+                {% endif %}
             </div>
         </div>
     </div>
-    <div class="a">
+    <div class="a" id = "about">
         <div class="a-1"></div>
         <div class="a-2"></div>
         <div class="again">
@@ -266,7 +287,6 @@
                 <div class="abpimg">
                     <img src="../static/imgs/map.png" alt="">
                 </div>
-                <div class="divide2" style="top:70vh;height:5px"></div>
                 <div class="abggrid">
                     <div class="abgdesc">
                         <p>
@@ -291,13 +311,15 @@
                     <div class="ablearn">
                         <p>LEARN ABOUT YOUR <br>PRESIDENT</p>
                     </div>
-                    <div class="ablearnbtn">
-                        <p>LEARN MORE</p>
-                    </div>
+                    <a href="/aboutprez">
+                        <div class="ablearnbtn">
+                            <p>LEARN MORE</p>
+                        </div>
+                    </a>
             </div>
         </div>
     </div>
-    <div class="contact">
+    <div class="contact" id = "contact">
         <img src="../static/imgs/contact.png" alt="" class="cbg">
         <div class="cnh">
             <p>CONTACT AND HELP</p>

@@ -14,8 +14,6 @@
         <div class="mf">
             <img src="../static/imgs/monkeyfront.png" alt="">
         </div>
-        <div class="mb-1"></div>
-        <div class="mb-2"></div>
         <div class="mr">
             <div class="upm-menu">
                 <div class="upm-mi">
@@ -29,20 +27,20 @@
             </div>
             <div class="item-menu">
                 <div class="home-m">
-                    <p>home</p>
+                    <a href = "/#home">home</a>
                 </div>
                 <div class="about-m">
-                    <p>about</p>
+                    <a href = "/#about">about</a>
                 </div>
                 <div class="mycitizen-m">
-                    <p>mycitizen</p>
+                    <a href = "/#mycitizen">mycitizen</a>
                 </div>
                 <div class="space"></div>
                 <div class="services-m">
-                    <p>services</p>
+                    <a href = "/#services">services</a>
                 </div>
                 <div class="contact-m">
-                    <p>contact us</p>
+                    <a href = "/#contact">contact us</a>
                 </div>
             </div>
             <div class="s-bar">
@@ -53,7 +51,11 @@
             <div class="l-bar">
                 <div class="l-1b"></div>
                 <div class="l-2b"></div>
-                <p>Login to MYCITIZEN</p>
+                {% if current_user.is_authenticated %}
+                    <a href = "/profile">Go to MYCITIZEN</a>
+                {% else %}
+                    <a href = "/login">Login to MYCITIZEN</a>
+                {% endif %}
             </div>
         </div>
     </div>
@@ -63,16 +65,15 @@
                 <img src="../static/imgs/profile.png" alt="">
             </div>
             <div class="profname">
-                <p>Aakash Ashok</p>
+                <p>{{ name }}</p>
             </div>
             <div class="profdesc">
-                <p>self taught programmer and communist</p>
+                <p>proud citizen of UPM</p>
             </div>
             <div class="profs">
-                <p>Age: 15 <br>
+                <p>Age: 18 <br>
 Location: Miling, Maclesia <br>
-Status: Baddie w/ a Daddy <br>
-Education: B.E. In Gooning Science </p>
+Education: B.E. in Comp. Sci </p>
             </div>
         </div>
         <div class="profshadow"></div>
@@ -80,7 +81,7 @@ Education: B.E. In Gooning Science </p>
             <div class="profbox">
                 <div class="pdesc">
                     <p><span style="font-weight: 700;font-size: 1.5vw;">About: </span><br>
-Aakash Ashok is a self-taught programmer with proficiency in multiple programming languages and a strong background in computer science. As a tax-paying citizen of the United Pingdom of Minet, he actively contributes to the nation’s growing digital sector. His expertise spans software development, system optimization, and innovative technology solutions.</p>
+{{ name }} is a self-taught programmer with proficiency in multiple programming languages and a strong background in computer science. As a tax-paying citizen of the United Pingdom of Minet, he actively contributes to the nation’s growing digital sector. His expertise spans software development, system optimization, and innovative technology solutions.</p>
                 </div>
             </div>
             <div class="profboxshadow" style ="top:5px"></div>
@@ -116,7 +117,7 @@ Aakash Ashok is a self-taught programmer with proficiency in multiple programmin
             <div class="profboxshadow" style ="top:calc(49vh + 5px)"></div>
         </div>
     </div>
-    <div class="billmain">
+    <div class="billmain" id = "bill">
         <div class="billmonke">
             <img src="../static/imgs/billmonke.png" alt="">
         </div>
@@ -211,7 +212,7 @@ Aakash Ashok is a self-taught programmer with proficiency in multiple programmin
             </div>
         </div>
     </div>
-    <div class="querymain">
+    <div class="querymain" id = "query">
         <div class="billmonke">
             <img src="../static/imgs/querymonke.png" alt="">
         </div>
@@ -239,71 +240,38 @@ Aakash Ashok is a self-taught programmer with proficiency in multiple programmin
             <div class="billgridrow">
                 <div class="billgridcolumn">
                     <div class="billrect">
-                        <p>Electricity Bill</p>
+                        <p>Internet</p>
                     </div>
                 </div>
                 <div class="billgridcolumn">
                     <div class="billrect">
-                        <p>Unpaid</p>
+                        <p>Resolved</p>
                     </div>
                 </div>
                 <div class="billgridcolumn">
                     <div class="queryrect">
-                        <p>Pay</p>
+                        <p>Digital Access to All</p>
                     </div>
                 </div>
             </div>
             <div class="billgridrow">
                 <div class="billgridcolumn">
                     <div class="billrect">
-                        <p>Water Bill</p>
+                        <p>Foreign</p>
                     </div>
                 </div>
                 <div class="billgridcolumn">
                     <div class="billrect">
-                        <p>Unpaid</p>
+                        <p>Resolved</p>
                     </div>
                 </div>
                 <div class="billgridcolumn">
                     <div class="queryrect">
-                        <p>Pay</p>
+                        <p>National Citrus Export Policy</p>
                     </div>
                 </div>
             </div>
-            <div class="billgridrow">
-                <div class="billgridcolumn">
-                    <div class="billrect">
-                        <p>Home Mortgage</p>
-                    </div>
-                </div>
-                <div class="billgridcolumn">
-                    <div class="billrect">
-                        <p>Unpaid</p>
-                    </div>
-                </div>
-                <div class="billgridcolumn">
-                    <div class="queryrect">
-                        <p>Pay</p>
-                    </div>
-                </div>
-            </div>
-            <div class="billgridrow">
-                <div class="billgridcolumn">
-                    <div class="billrect">
-                        <p>Maintanance Bill</p>
-                    </div>
-                </div>
-                <div class="billgridcolumn">
-                    <div class="billrect">
-                        <p>Unpaid</p>
-                    </div>
-                </div>
-                <div class="billgridcolumn">
-                    <div class="queryrect">
-                        <p>Pay</p>
-                    </div>
-                </div>
-            </div>
+            {{ queries | safe }}
         </div>
         <div class="pline">
             <div class="plgrid">
