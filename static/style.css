@@ -138,6 +138,7 @@ p {
     aspect-ratio: 1;
     left: 25%;
     top: 50%;
+    cursor: pointer;
     transform: translate(-50%, -50%);
 }
 .l-bar {
@@ -346,7 +347,7 @@ p {
     z-index: 4;
     display: grid;
     grid-template-rows: 15% 20% 40% auto;
-    cursor: pointer;
+    cursor: default;
 }
 .sshadow {
     width: 100%;
@@ -530,10 +531,16 @@ p {
 }
 .billgridrow:nth-child(n+2) > .billgridcolumn:nth-child(3) > .billrect  {
     background-color: #27DBE2;
-    cursor: pointer;
     opacity: 1;
-    transition: opacity 250ms ease-in-out;
-}
+}   
+.billgridrow:nth-child(n+2) > .billgridcolumn:nth-child(3) > .billrect > a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}   
 .billgridrow:nth-child(n+2) > .billgridcolumn:nth-child(3) > .queryrect  {
     align-items: baseline;
     padding-left:1.25vw;
@@ -549,7 +556,7 @@ p {
     transform: translate(-50%);
     display: flex;
     flex-direction: column;
-    height: auto; 
+    height: 200vh; 
 }
 .apmain {
     position: relative;
@@ -557,8 +564,7 @@ p {
     top: 0;
     transform: translate(-50%);
     background: #F7ECE5;
-    height: min-content;
-    overflow-y: scroll;
+    height: 100%;
     overflow-x: hidden;
 }
 .aphead {
@@ -739,7 +745,7 @@ p {
     float: right;
     width: 22.5vw; 
     right: 2.5vw;
-    top: -3.75vw; /* top row = image auto height, bottom = grid fills rest */
+    top: -3.5vw; /* top row = image auto height, bottom = grid fills rest */
 }
 .appic {
     position: relative;
@@ -1530,4 +1536,43 @@ input:focus {
 }
 .iqrect input {
     margin-left: 1.5vw;
+}
+.search {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+}
+.search img {
+    width: 60%;
+}
+::-webkit-scrollbar {
+    background:#3DA3A7;
+}
+::-webkit-scrollbar-track-piece {
+    background:#3DA3A7;
+}
+::-webkit-scrollbar-thumb {
+    background:#000;
+}
+.mm {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+}
+.mm img {
+    width: 100%;
 }

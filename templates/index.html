@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,11 @@
     <link rel="stylesheet" href="../static/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Jersey+10&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Jersey+10&family=Pixelify+Sans:wght@400..700&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <div class="bg">
     </div>
@@ -21,6 +25,9 @@
                 <div class="upm-mi">
                     <div class="mi-1"></div>
                     <div class="mi-2"></div>
+                    <div class="mm">
+                        <img src="../static/imgs/monkeymenu.png" alt="">
+                    </div>
                 </div>
                 <div class="upm-mt">
                     <p>MINET.GOV.COM</p>
@@ -29,39 +36,41 @@
             </div>
             <div class="item-menu">
                 <div class="home-m">
-                    <a href = "/#home">home</a>
+                    <a href="/#home">home</a>
                 </div>
                 <div class="about-m">
-                    <a href = "/#about">about</a>
+                    <a href="/#about">about</a>
                 </div>
                 <div class="mycitizen-m">
-                    <a href = "/#mycitizen">mycitizen</a>
+                    <a href="/#mycitizen">mycitizen</a>
                 </div>
                 <div class="space"></div>
                 <div class="services-m">
-                    <a href = "/#services">services</a>
+                    <a href="/#services">services</a>
                 </div>
                 <div class="contact-m">
-                    <a href = "/#contact">contact us</a>
+                    <a href="/#contact">contact us</a>
                 </div>
             </div>
             <div class="s-bar">
+                <div class="search">
+                    <img src="../static/imgs/searchbar.svg" alt="">
+                </div>
                 <div class="s-1b"></div>
                 <div class="s-2b"></div>
-                <img src="../static/imgs/searchbar.svg" alt="">
             </div>
             <div class="l-bar">
                 <div class="l-1b"></div>
                 <div class="l-2b"></div>
                 {% if current_user.is_authenticated %}
-                    <a href = "/profile">Go to MYCITIZEN</a>
+                <a href="/profile">Go to MYCITIZEN</a>
                 {% else %}
-                    <a href = "/login">Login to MYCITIZEN</a>
+                <a href="/login">Login to MYCITIZEN</a>
                 {% endif %}
             </div>
         </div>
     </div>
-    <div class="main" id = "home">
+    <div class="main" id="home">
         <div class="main-1"></div>
         <div class="main-2"></div>
         <div class="mmdle">
@@ -72,14 +81,17 @@
                 <p>JOIN UPM’S <br>REVOLUTION</p>
             </div>
             <div class="maindesc">
-                <p>The United Pingdom of Minet proudly announces that our esteemed leader,<br> President Dhimaan Prasad, will propel the nation into the 21st century with <br>the “.Com for All” program—bringing every facet of governance and civic life <br>online, and, of course, earning the people’s unwavering trust.</p>
+                <p>The United Pingdom of Minet proudly announces that our esteemed leader,<br> President Dhimaan Prasad,
+                    will propel the nation into the 21st century with <br>the “.Com for All” program—bringing every
+                    facet of governance and civic life <br>online, and, of course, earning the people’s unwavering
+                    trust.</p>
             </div>
             <div class="mainbtns">
                 <div class="learnmbtn">
-                    <a href = "/#about" style="color:#000;opacity:0.5;">LEARN MORE</a>
+                    <a href="/#about" style="color:#000;opacity:0.5;">LEARN MORE</a>
                 </div>
                 <div class="joinbtn">
-                    <a href = "/login">JOIN</a>
+                    <a href="/login">JOIN</a>
                 </div>
             </div>
             <div class="monke">
@@ -87,30 +99,30 @@
             </div>
         </div>
     </div>
-    <div class="services" id = "services">
+    <div class="services" id="services">
         <div class="shead">
             <p>Our Services</p>
         </div>
         <div class="sdesc">
-            <p>Empowered by the vision of President Dhimaan Prasaad, we are committed to delivering this comprehensive catalogue of services to all citizens.</p>
+            <p>Empowered by the vision of President Dhimaan Prasaad, we are committed to delivering this comprehensive
+                catalogue of services to all citizens.</p>
         </div>
         <div class="sgrid">
             <div class="srow">
                 <div class="scolumn">
-                    <a href="/profile#bill">
-                        <div class="srect">
-                            <div class="uprect"></div>
-                            <div class="uprecttxt">
-                                <p>Bill Payment <br>Tracker</p>
-                            </div>
-                            <div class="rectimg">
-                                <img src="../static/imgs/moneybag.png" alt="" style = "width:100%">
-                            </div>
-                            <div class="recttxt">
-                                <p>Easily view and pay all your bills in one place, from utilities to taxes. Get instant status updates and reminders to avoid missed payments.</p>
-                            </div>
+                    <div class="srect">
+                        <div class="uprect"></div>
+                        <div class="uprecttxt">
+                            <p>Bill Payment <br>Tracker</p>
                         </div>
-                    </a>
+                        <div class="rectimg">
+                            <img src="../static/imgs/moneybag.png" alt="" style="width:100%">
+                        </div>
+                        <div class="recttxt">
+                            <p>Easily view and pay all your bills in one place, from utilities to taxes. Get instant
+                                status updates and reminders to avoid missed payments.</p>
+                        </div>
+                    </div>
                     <div class="sshadow"></div>
                 </div>
                 <div class="scolumn">
@@ -120,30 +132,30 @@
                             <p>Online Bill <br>Payment</p>
                         </div>
                         <div class="rectimg">
-                            <img src="../static/imgs/bill.png" alt="" style = "width:125%">
+                            <img src="../static/imgs/bill.png" alt="" style="width:125%">
                         </div>
                         <div class="recttxt">
-                            <p>Pay your utility, tax, and service bills securely from anywhere. Receive instant confirmation and digital receipts.</p>
+                            <p>Pay your utility, tax, and service bills securely from anywhere. Receive instant
+                                confirmation and digital receipts.</p>
                         </div>
                     </div>
                     <div class="sshadow"></div>
 
                 </div>
                 <div class="scolumn">
-                    <a href="/profile#query">
-                        <div class="srect">
-                            <div class="uprect"></div>
-                            <div class="uprecttxt">
-                                <p>Query <br>Tracker</p>
-                            </div>
-                            <div class="rectimg">
-                                <img src="../static/imgs/magniglass.png" alt="" style = "width:100%">
-                            </div>
-                            <div class="recttxt">
-                                <p>Check the status of your submitted queries in real time. Stay informed with clear progress updates at each stage.</p>
-                            </div>
+                    <div class="srect">
+                        <div class="uprect"></div>
+                        <div class="uprecttxt">
+                            <p>Query <br>Tracker</p>
                         </div>
-                    </a>
+                        <div class="rectimg">
+                            <img src="../static/imgs/magniglass.png" alt="" style="width:100%">
+                        </div>
+                        <div class="recttxt">
+                            <p>Check the status of your submitted queries in real time. Stay informed with clear
+                                progress updates at each stage.</p>
+                        </div>
+                    </div>
                     <div class="sshadow"></div>
                 </div>
             </div>
@@ -155,29 +167,29 @@
                             <p>Initiate <br>Query</p>
                         </div>
                         <div class="rectimg">
-                            <img src="../static/imgs/question.png" alt="" style = "width:100%">
+                            <img src="../static/imgs/question.png" alt="" style="width:100%">
                         </div>
                         <div class="recttxt">
-                            <p>Submit questions, requests, or service issues directly to the concerned department. Get a unique reference ID for follow-up.</p>
+                            <p>Submit questions, requests, or service issues directly to the concerned department. Get a
+                                unique reference ID for follow-up.</p>
                         </div>
                     </div>
                     <div class="sshadow"></div>
                 </div>
                 <div class="scolumn">
-                    <a href="/#contact">
-                        <div class="srect">
-                            <div class="uprect"></div>
-                            <div class="uprecttxt">
-                                <p>Contact <br>Us</p>
-                            </div>
-                            <div class="rectimg">
-                                <img src="../static/imgs/telephone.png" alt="" style = "width:125%">
-                            </div>
-                            <div class="recttxt">
-                                <p>Submit questions, requests, or service issues directly to the concerned department. Get a unique reference ID for follow-up.</p>
-                            </div>
+                    <div class="srect">
+                        <div class="uprect"></div>
+                        <div class="uprecttxt">
+                            <p>Contact <br>Us</p>
                         </div>
-                    </a>
+                        <div class="rectimg">
+                            <img src="../static/imgs/telephone.png" alt="" style="width:125%">
+                        </div>
+                        <div class="recttxt">
+                            <p>Submit questions, requests, or service issues directly to the concerned department. Get a
+                                unique reference ID for follow-up.</p>
+                        </div>
+                    </div>
                     <div class="sshadow"></div>
                 </div>
                 <div class="scolumn">
@@ -187,10 +199,11 @@
                             <p>Book Offline <br>Appointments</p>
                         </div>
                         <div class="rectimg">
-                            <img src="../static/imgs/people.png" alt="" style = "width:100%">
+                            <img src="../static/imgs/people.png" alt="" style="width:100%">
                         </div>
                         <div class="recttxt">
-                            <p>Schedule in-person meetings with government staff without waiting in long queues. Choose your preferred date, time, and service location.</p>
+                            <p>Schedule in-person meetings with government staff without waiting in long queues. Choose
+                                your preferred date, time, and service location.</p>
                         </div>
                     </div>
                     <div class="sshadow"></div>
@@ -198,7 +211,7 @@
             </div>
         </div>
     </div>
-    <div class="mycitizen" id = "mycitizen">
+    <div class="mycitizen" id="mycitizen">
         <div class="mchead">
             <p>MyCitizen</p>
         </div>
@@ -208,7 +221,9 @@
                     <img src="../static/imgs/man.svg" alt="">
                 </div>
                 <div class="mcdesc">
-                    <p>Create your secure MyCitizen ID by choosing a password and completing a quick ID scan for verification. Log in anytime to access your personal dashboard and manage all government services in one place.</p>
+                    <p>Create your secure MyCitizen ID by choosing a password and completing a quick ID scan for
+                        verification. Log in anytime to access your personal dashboard and manage all government
+                        services in one place.</p>
                 </div>
             </div>
             <div class="mcitem">
@@ -216,7 +231,9 @@
                     <img src="../static/imgs/card.svg" alt="">
                 </div>
                 <div class="mcdesc">
-                    <p>Citizens can easily log in to their MyCitizen account using their unique ID and password. A quick, secure verification step ensures trusted access to all personal services and official records.</p>
+                    <p>Citizens can easily log in to their MyCitizen account using their unique ID and password. A
+                        quick, secure verification step ensures trusted access to all personal services and official
+                        records.</p>
                 </div>
             </div>
             <div class="mcitem">
@@ -224,35 +241,37 @@
                     <img src="../static/imgs/bank.svg" alt="">
                 </div>
                 <div class="mcdesc">
-                    <p>With the MyCitizen app, citizens can manage bills, taxes, and expenses all in one secure platform. The dashboard features instant updates about what is due and what is paid along with a seamless transaction ui.</p>
+                    <p>With the MyCitizen app, citizens can manage bills, taxes, and expenses all in one secure
+                        platform. The dashboard features instant updates about what is due and what is paid along with a
+                        seamless transaction ui.</p>
                 </div>
             </div>
         </div>
         <div class="mcline">
-            
-                {% if current_user.is_authenticated %}
-                    <div class="mclgrid">
-                        <div>
-                            <a href = "/profile">GO TO MYCITIZEN</a>
-                        </div>
-                        <div>
-                            <a href = "/logout">LOGOUT OF MYCITIZEN</p>
-                        </div>
-                    </div>
-                {% else %}
-                    <div class="mclgrid">
-                        <div>
-                            <a href = "/login">LOG IN | SIGN IN</a>
-                        </div>
-                        <div>
-                            <a href = "/register">SIGN UP | REGISTER</a>
-                        </div>
-                    </div>
-                {% endif %}
+
+            {% if current_user.is_authenticated %}
+            <div class="mclgrid">
+                <div>
+                    <a href="/profile">GO TO MYCITIZEN</a>
+                </div>
+                <div>
+                    <a href="/logout">LOGOUT OF MYCITIZEN</p>
+                </div>
             </div>
+            {% else %}
+            <div class="mclgrid">
+                <div>
+                    <a href="/login">LOG IN | SIGN IN</a>
+                </div>
+                <div>
+                    <a href="/register">SIGN UP | REGISTER</a>
+                </div>
+            </div>
+            {% endif %}
         </div>
     </div>
-    <div class="a" id = "about">
+    </div>
+    <div class="a" id="about">
         <div class="a-1"></div>
         <div class="a-2"></div>
         <div class="again">
@@ -266,13 +285,16 @@
                     <p>Composition of Economy</p>
                 </div>
                 <div class="abcompd">
-                    <p>The economy of the United Pingdom of Minet is broadly diversified; however, when distilled to its principal drivers, a select number of sectors emerge as the primary contributors to national prosperity. 
+                    <p>The economy of the United Pingdom of Minet is broadly diversified; however, when distilled to its
+                        principal drivers, a select number of sectors emerge as the primary contributors to national
+                        prosperity.
                     <ul><br>
-                    <li><span>Citrus Farming</span>   --> 18%</li><br>
-                    <li><span>Sugarcane Exports</span>  --> 15%</li><br>
-                    <li><span>Small-scaled electronics assembly</span> --> 11%</li><br>
-                    <li><span>Board Game Manufacturing industry</span> --> 8% </li><br>
-                    </ul></p>
+                        <li><span>Citrus Farming</span> --> 18%</li><br>
+                        <li><span>Sugarcane Exports</span> --> 15%</li><br>
+                        <li><span>Small-scaled electronics assembly</span> --> 11%</li><br>
+                        <li><span>Board Game Manufacturing industry</span> --> 8% </li><br>
+                    </ul>
+                    </p>
                 </div>
                 <div class="abcompg">
                     <img src="../static/imgs/graph.png" alt="">
@@ -282,7 +304,9 @@
                     <p>Population Distribution</p>
                 </div>
                 <div class="abptxt">
-                    <p>The United Pingdom of MINET has a population of 6.9 million people.This population is spread out in heterogenous manner throughout the nation.However most of the nations population is concentrated in the capital "<span style = "color:#3DA3A7">SUSLAND</span>"</p>
+                    <p>The United Pingdom of MINET has a population of 6.9 million people.This population is spread out
+                        in heterogenous manner throughout the nation.However most of the nations population is
+                        concentrated in the capital "<span style="color:#3DA3A7">SUSLAND</span>"</p>
                 </div>
                 <div class="abpimg">
                     <img src="../static/imgs/map.png" alt="">
@@ -290,48 +314,86 @@
                 <div class="abggrid">
                     <div class="abgdesc">
                         <p>
-                        Border Length : 15200 KMs <br>
-                        Landarea : 3.287 million km² <br>
-                        Capital City : Susland <br>
-                        Major Regions : Westcking and Susland <br>
-                        Climate & Natural Resources: Ideal for citrus and sugarcane farming <br>
+                            Border Length : 15200 KMs <br>
+                            Landarea : 3.287 million km² <br>
+                            Capital City : Susland <br>
+                            Major Regions : Westcking and Susland <br>
+                            Climate & Natural Resources: Ideal for citrus and sugarcane farming <br>
                         </p>
                     </div>
                     <div class="apghead">
                         <table>
-                            <tr><td></td><td></td><td></td><td></td><td></td></tr>
-                            <tr><td></td><td></td><td></td><td></td><td></td></tr>
-                            <tr><td></td><td></td><td></td><td></td><td></td></tr>
-                            <tr><td></td><td></td><td></td><td></td><td></td></tr>
-                            <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
                         </table>
-                        <p class = "apgp">Geographical Profile</p>
+                        <p class="apgp">Geographical Profile</p>
                     </div>
                 </div>
-                    <div class="ablearn">
-                        <p>LEARN ABOUT YOUR <br>PRESIDENT</p>
+                <div class="ablearn">
+                    <p>LEARN ABOUT YOUR <br>PRESIDENT</p>
+                </div>
+                <a href="/aboutprez">
+                    <div class="ablearnbtn">
+                        <p>LEARN MORE</p>
                     </div>
-                    <a href="/aboutprez">
-                        <div class="ablearnbtn">
-                            <p>LEARN MORE</p>
-                        </div>
-                    </a>
+                </a>
             </div>
         </div>
     </div>
-    <div class="contact" id = "contact">
+    <div class="contact" id="contact">
         <img src="../static/imgs/contact.png" alt="" class="cbg">
         <div class="cnh">
             <p>CONTACT AND HELP</p>
         </div>
-        <div class="cfree"><p>feel free to ask questions</p></div>
-        <div class="csite"><p>MINET.GOV.COM</p></div>
-        <div class="cflw"><p>FOLLOW US</p></div>
-        <div class="cinfo"><p>
-            >>Contact Info <br><br>
-            tel no: 123-123-1234 <br>
-            nCrypt_1999
-        </p></div>
+        <div class="cfree">
+            <p>feel free to ask questions</p>
+        </div>
+        <div class="csite">
+            <p>MINET.GOV.COM</p>
+        </div>
+        <div class="cflw">
+            <p>FOLLOW US</p>
+        </div>
+        <div class="cinfo">
+            <p>
+                >>Contact Info <br><br>
+                tel no: 123-123-1234 <br>
+                nCrypt_1999
+            </p>
+        </div>
         <div class="cstamp">
             <img src="../static/imgs/stamp.png" alt="">
         </div>
@@ -339,5 +401,159 @@
             <p>Copyright @MINET.GOV.COM. All Rights Reserved</p>
         </div>
     </div>
+    <div id="custom-search" style="display:none">
+        <input id="search-input" type="text" placeholder="Search…" />
+        <button id="search-close" aria-label="Close">×</button>
+    </div>
+
+    <style>
+        #custom-search {
+            position: fixed;
+            top: 12px;
+            right: 12px;
+            z-index: 99999;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            background: #3DA3A7;
+            backdrop-filter: blur(6px);
+            border: 2px solid rgba(0, 0, 0);
+            ;
+            padding: 8px 10px;
+            box-shadow: 0 6px 30px rgba(0, 0, 0, .12);
+            font-family: 'Jersey 10';
+        }
+
+        #custom-search input {
+            width: 260px;
+            border: none;
+            outline: none;
+            background: transparent;
+            font: inherit;
+            padding: 6px 4px;
+        }
+
+        #custom-search button {
+            border: none;
+            background: transparent;
+            font-size: 18px;
+            line-height: 1;
+            cursor: pointer;
+            padding: 2px 6px;
+        }
+
+        mark.search-hit {
+            background: yellow;
+            padding: 0;
+            color: inherit;
+        }
+    </style>
+
+    <script>
+        (function () {
+            const root = document.body
+
+            function escapeRegExp(str) {
+                return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            }
+
+            function clearHighlights() {
+                const marks = root.querySelectorAll('mark.search-hit');
+                marks.forEach(mark => {
+                    const parent = mark.parentNode;
+                    parent.replaceChild(document.createTextNode(mark.textContent), mark);
+                    parent.normalize();
+                });
+            }
+
+            function textNodeWalker() {
+                const skip = node =>
+                    node.closest && node.closest('#custom-search')
+                    || node.tagName === 'SCRIPT'
+                    || node.tagName === 'STYLE'
+                    || node.tagName === 'NOSCRIPT';
+
+                const walker = document.createTreeWalker(
+                    root,
+                    NodeFilter.SHOW_TEXT,
+                    {
+                        acceptNode(node) {
+                            if (!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+                            const p = node.parentNode;
+                            if (p && p.tagName && skip(p)) return NodeFilter.FILTER_REJECT;
+                            return NodeFilter.FILTER_ACCEPT;
+                        }
+                    }
+                );
+                const nodes = [];
+                while (walker.nextNode()) nodes.push(walker.currentNode);
+                return nodes;
+            }
+
+            function highlightAll(query) {
+                clearHighlights();
+                if (!query) return;
+                const re = new RegExp(escapeRegExp(query), 'gi');
+
+                const nodes = textNodeWalker();
+                nodes.forEach(node => {
+                    let text = node.nodeValue;
+                    let m;
+                    while ((m = re.exec(text)) !== null) {
+                        const start = m.index;
+                        const end = start + m[0].length;
+
+                        const range = document.createRange();
+                        range.setStart(node, start);
+                        range.setEnd(node, end);
+
+                        const mark = document.createElement('mark');
+                        mark.className = 'search-hit';
+                        range.surroundContents(mark);
+
+                        const after = mark.nextSibling;
+                        if (!after || after.nodeType !== 3) break;
+                        node = after;
+                        text = node.nodeValue;
+                        re.lastIndex = 0;
+                    }
+                });
+            }
+
+            const box = document.getElementById('custom-search');
+            const input = document.getElementById('search-input');
+            const close = document.getElementById('search-close');
+
+            document.addEventListener('keydown', e => {
+                if (e.ctrlKey && (e.key === 'f' || e.key === 'F')) {
+                    e.preventDefault();
+                    box.style.display = 'flex';
+                    input.focus();
+                    input.select();
+                } else if (e.key === 'Escape' && box.style.display !== 'none') {
+                    box.style.display = 'none';
+                    clearHighlights();
+                }
+            });
+            document.getElementsByClassName("s-bar")[0].addEventListener("click", () => {
+                box.style.display = 'flex';
+                input.focus();
+                input.select();
+            })
+
+            close.addEventListener('click', () => {
+                box.style.display = 'none';
+                clearHighlights();
+            });
+
+            let t;
+            input.addEventListener('input', () => {
+                clearTimeout(t);
+                t = setTimeout(() => highlightAll(input.value.trim()), 80);
+            });
+        })();
+    </script>
+
 </body>
+
 </html>

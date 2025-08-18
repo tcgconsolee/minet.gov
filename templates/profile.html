@@ -19,6 +19,9 @@
                 <div class="upm-mi">
                     <div class="mi-1"></div>
                     <div class="mi-2"></div>
+                    <div class="mm">
+                        <img src="../static/imgs/monkeymenu.png" alt="">
+                    </div>
                 </div>
                 <div class="upm-mt">
                     <p>MINET.GOV.COM</p>
@@ -27,34 +30,36 @@
             </div>
             <div class="item-menu">
                 <div class="home-m">
-                    <a href = "/#home">home</a>
+                    <a href="/#home">home</a>
                 </div>
                 <div class="about-m">
-                    <a href = "/#about">about</a>
+                    <a href="/#about">about</a>
                 </div>
                 <div class="mycitizen-m">
-                    <a href = "/#mycitizen">mycitizen</a>
+                    <a href="/#mycitizen">mycitizen</a>
                 </div>
                 <div class="space"></div>
                 <div class="services-m">
-                    <a href = "/#services">services</a>
+                    <a href="/#services">services</a>
                 </div>
                 <div class="contact-m">
-                    <a href = "/#contact">contact us</a>
+                    <a href="/#contact">contact us</a>
                 </div>
             </div>
             <div class="s-bar">
+                <div class="search">
+                    <img src="../static/imgs/searchbar.svg" alt="">
+                </div>
                 <div class="s-1b"></div>
                 <div class="s-2b"></div>
-                <img src="../static/imgs/searchbar.svg" alt="">
             </div>
             <div class="l-bar">
                 <div class="l-1b"></div>
                 <div class="l-2b"></div>
                 {% if current_user.is_authenticated %}
-                    <a href = "/profile">Go to MYCITIZEN</a>
+                <a href="/profile">Go to MYCITIZEN</a>
                 {% else %}
-                    <a href = "/login">Login to MYCITIZEN</a>
+                <a href="/login">Login to MYCITIZEN</a>
                 {% endif %}
             </div>
         </div>
@@ -155,7 +160,11 @@ Education: B.E. in Comp. Sci </p>
                 </div>
                 <div class="billgridcolumn">
                     <div class="billrect">
-                        <p>Pay</p>
+                        {% if current_user.bills[0] %}
+                            <p style="opacity:0.6;cursor:default;">Paid</p>
+                        {% else %}
+                            <a href="/bill?n=0">Pay</a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -172,7 +181,11 @@ Education: B.E. in Comp. Sci </p>
                 </div>
                 <div class="billgridcolumn">
                     <div class="billrect">
-                        <p>Pay</p>
+                        {% if current_user.bills[1] %}
+                            <p style="opacity:0.6;cursor:default;">Paid</p>
+                        {% else %}
+                            <a href="/bill?n=1">Pay</a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -189,7 +202,11 @@ Education: B.E. in Comp. Sci </p>
                 </div>
                 <div class="billgridcolumn">
                     <div class="billrect">
-                        <p>Pay</p>
+                        {% if current_user.bills[2] %}
+                            <p style="opacity:0.6;cursor:default;">Paid</p>
+                        {% else %}
+                            <a href="/bill?n=2">Pay</a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -206,7 +223,11 @@ Education: B.E. in Comp. Sci </p>
                 </div>
                 <div class="billgridcolumn">
                     <div class="billrect">
-                        <p>Pay</p>
+                        {% if current_user.bills[3] %}
+                            <p style="opacity:0.6;cursor:default;">Paid</p>
+                        {% else %}
+                            <a href="/bill?n=3">Pay</a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -276,7 +297,7 @@ Education: B.E. in Comp. Sci </p>
         <div class="pline">
             <div class="plgrid">
                 <div>
-                    <p>ASK NEW QUERY</p>
+                    <a href = "/query">ASK NEW QUERY</a>
                 </div>
                 <div>
                     <a href = "/">BACK TO HOMEPAGE</a>
@@ -284,17 +305,159 @@ Education: B.E. in Comp. Sci </p>
             </div>
         </div>
     </div>
+    
+    <div id="custom-search" style="display:none">
+        <input id="search-input" type="text" placeholder="Search…" />
+        <button id="search-close" aria-label="Close">×</button>
+    </div>
+
+    <style>
+        #custom-search {
+            position: fixed;
+            top: 12px;
+            right: 12px;
+            z-index: 99999;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            background: #3DA3A7;
+            backdrop-filter: blur(6px);
+            border: 2px solid rgba(0, 0, 0);
+            ;
+            padding: 8px 10px;
+            box-shadow: 0 6px 30px rgba(0, 0, 0, .12);
+            font-family: 'Jersey 10';
+        }
+
+        #custom-search input {
+            width: 260px;
+            border: none;
+            outline: none;
+            background: transparent;
+            font: inherit;
+            padding: 6px 4px;
+        }
+
+        #custom-search button {
+            border: none;
+            background: transparent;
+            font-size: 18px;
+            line-height: 1;
+            cursor: pointer;
+            padding: 2px 6px;
+        }
+
+        mark.search-hit {
+            background: yellow;
+            padding: 0;
+            color: inherit;
+        }
+    </style>
+
     <script>
-        document.querySelectorAll(".billgridrow:nth-child(n+2) > .billgridcolumn:nth-child(3) > .billrect").forEach(obj => {
-            obj.style.opacity = "1";
-            obj.addEventListener("click", () => {
-                if(Number(obj.style.opacity) > 0.8) {
-                    obj.style.opacity = "0.6"
-                    obj.firstElementChild.innerHTML = "Paid"
-                    obj.style.cursor = "default";
+        (function () {
+            const root = document.body
+
+            function escapeRegExp(str) {
+                return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            }
+
+            function clearHighlights() {
+                const marks = root.querySelectorAll('mark.search-hit');
+                marks.forEach(mark => {
+                    const parent = mark.parentNode;
+                    parent.replaceChild(document.createTextNode(mark.textContent), mark);
+                    parent.normalize();
+                });
+            }
+
+            function textNodeWalker() {
+                const skip = node =>
+                    node.closest && node.closest('#custom-search')
+                    || node.tagName === 'SCRIPT'
+                    || node.tagName === 'STYLE'
+                    || node.tagName === 'NOSCRIPT';
+
+                const walker = document.createTreeWalker(
+                    root,
+                    NodeFilter.SHOW_TEXT,
+                    {
+                        acceptNode(node) {
+                            if (!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+                            const p = node.parentNode;
+                            if (p && p.tagName && skip(p)) return NodeFilter.FILTER_REJECT;
+                            return NodeFilter.FILTER_ACCEPT;
+                        }
+                    }
+                );
+                const nodes = [];
+                while (walker.nextNode()) nodes.push(walker.currentNode);
+                return nodes;
+            }
+
+            function highlightAll(query) {
+                clearHighlights();
+                if (!query) return;
+                const re = new RegExp(escapeRegExp(query), 'gi');
+
+                const nodes = textNodeWalker();
+                nodes.forEach(node => {
+                    let text = node.nodeValue;
+                    let m;
+                    while ((m = re.exec(text)) !== null) {
+                        const start = m.index;
+                        const end = start + m[0].length;
+
+                        const range = document.createRange();
+                        range.setStart(node, start);
+                        range.setEnd(node, end);
+
+                        const mark = document.createElement('mark');
+                        mark.className = 'search-hit';
+                        range.surroundContents(mark);
+
+                        const after = mark.nextSibling;
+                        if (!after || after.nodeType !== 3) break;
+                        node = after;
+                        text = node.nodeValue;
+                        re.lastIndex = 0;
+                    }
+                });
+            }
+
+            const box = document.getElementById('custom-search');
+            const input = document.getElementById('search-input');
+            const close = document.getElementById('search-close');
+
+            document.addEventListener('keydown', e => {
+                if (e.ctrlKey && (e.key === 'f' || e.key === 'F')) {
+                    e.preventDefault();
+                    box.style.display = 'flex';
+                    input.focus();
+                    input.select();
+                } else if (e.key === 'Escape' && box.style.display !== 'none') {
+                    box.style.display = 'none';
+                    clearHighlights();
                 }
+            });
+            document.getElementsByClassName("s-bar")[0].addEventListener("click", () => {
+                box.style.display = 'flex';
+                input.focus();
+                input.select();
             })
-        })
+
+            close.addEventListener('click', () => {
+                box.style.display = 'none';
+                clearHighlights();
+            });
+
+            let t;
+            input.addEventListener('input', () => {
+                clearTimeout(t);
+                t = setTimeout(() => highlightAll(input.value.trim()), 80);
+            });
+        })();
     </script>
+
 </body>
 </html>
