@@ -117,7 +117,7 @@
         let letter = (document.getElementById("cimg").src.split("/imgs/")[1]).split(".pn")[0]
 
         document.getElementById("form").addEventListener("submit", (e) => {
-            if(document.getElementById("capa").value === letter) {} else {
+            if(document.getElementById("capa").value.toLowerCase() === letter) {} else {
                 e.preventDefault();
                 alert("Please enter the capcha correctly!")
             }

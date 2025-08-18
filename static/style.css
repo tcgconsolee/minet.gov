@@ -1044,6 +1044,7 @@ tr,td {
     height: 40vh;
     display: grid;
     grid-template-columns: 50% 50%;
+    z-index: 0;
 }
 .abgdesc {
     display: flex;
@@ -1059,6 +1060,8 @@ tr,td {
     width: 100%;
     height: 100%;
     border-collapse: collapse;
+    position: relative;
+    z-index: 0; 
 }
 .apgp {
     position: absolute;
@@ -1070,9 +1073,11 @@ tr,td {
     text-align: center;
     opacity: 0.5;
     line-height: 90%;
+    z-index: 10;
 }
 .apghead {
     position: relative;
+    z-index: 0;
 }
 .ablearn {
     position: absolute;
