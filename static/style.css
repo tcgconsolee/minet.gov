@@ -994,7 +994,8 @@ tr,td {
     top: 25vh;
 }
 .abcompg img {
-    width: 60%;
+    width: 20vw;
+    transform: translate(-75%)
 }
 .abpop {
     position: relative;
@@ -1023,9 +1024,12 @@ tr,td {
     position: relative;
     float: left;
     left: 2.5vw;
+    top: 12.5vw;
 }
 .abpimg img {
-    width: 70%;
+    width: 30vw;
+    transform: translateY(-50%);
+    
 }
 .abggrid {
     position: relative;
