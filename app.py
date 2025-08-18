@@ -26,6 +26,7 @@ class Users(UserMixin, db.Model):
                          nullable=False, default="")
     bills = db.Column(MutableList.as_mutable(db.JSON),
               default=[False, False, False, False])
+    booked = db.Column(db.Boolean, default=False, nullable=False)
  
  
 db.init_app(app)
@@ -132,6 +133,16 @@ def bill():
         db.session.commit()
         return redirect(url_for("profile"))
     return render_template("bill.html")
+
+@app.route("/book", methods=["GET", "POST"])
+def book():
+    if not current_user.is_authenticated:
+        return redirect(url_for("login"))
+    if request.method == "POST":
+        current_user.booked = True
+        db.session.commit()
+        return redirect(url_for("profile"))
+    return render_template("book.html")
 
 if __name__ == "__main__":
     app.run(host ="0.0.0.0", port = 10000, debug=True   )

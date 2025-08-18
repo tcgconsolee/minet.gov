@@ -69,10 +69,10 @@
             <img src="../static/imgs/querymonke.png" alt="">
         </div>
         <div class="billhead">
-            <p>Initiate Query</p>
+            <p>Book Appointment</p>
         </div>
         <div class="billdesc">
-            <p>Have questions about our policies? Look no further</p>
+            <p>Real life is always better than online</p>
         </div>
         <a href="/profile">
             <div class="quback">
@@ -80,27 +80,21 @@
             </div>
         </a>
         <div class="qubook">
-            {% if not current_user.booked %}
-                <a href = "/book">BOOK OFFLINE APPOINTMENT</a>
-            {% else %}
-                <p>BOOKED</p>
-            {% endif %}
+            <a href = "/">BACK TO HOMEPAGE</a>
         </div>
         <form method = "POST">
             <div class="iqrect">
-                <label for="type">Query_Type:</label>
-                <input type="text" name = "type" id = "type" maxlength="10" required><br>
-                <label for="name">Query_Name:</label>
-                <input type="text" name = "name" id = "name" maxlength="50" required><br><br>
-                <label for="details">Details:</label>
-                <input type="text" name = "details" id = "details" maxlength="200" style="width:50vw;" required><br><br>
-                <label for="check">Remain Anonymous</label>
-                <input type="checkbox" name = "check" id = "check" style="top:1.625vw;transform:translateY(-50%);">
+                <label for="type">Enter reason/topic:</label>
+                <input type="text" name = "reason" id = "reason" maxlength="10" required><br>
+                <label for="name">Enter your name:</label>
+                <input type="text" name = "uname" id = "uname" maxlength="50" required><br><br>
+                <label for="details">Choose date:</label>
+                <input type="datetime-local" name = "date" id = "date" required><br><br>
             </div>
             <div class="mcline" style = "bottom: 2.5vw;width: 93.75%">
                     <div class="qulgrid">
                         <div>
-                            <input type="submit" value = "SEND" style="cursor:pointer;">
+                            <input type="submit" value = "BOOK" style="cursor:pointer;">
                         </div>
                     </div>
                 </div>
