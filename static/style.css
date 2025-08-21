@@ -1887,6 +1887,7 @@ input:focus {
     font-family: 'Jersey 10';
     font-size: 1.5vw;
     color: #fff;
+    width: 20%;
 }
 .snl-cross {
     position: absolute;
