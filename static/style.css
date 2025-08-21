@@ -1595,21 +1595,35 @@ input:focus {
 }
 .snl {
     position: relative;
-    top: 60vh;
+    top: 155vh;
     left: 50%;
-    transform: translate(-50%);
+    transform: translate(-50%, -50%) scale(0);
     width: 80vw;
     height: 90vh;
     margin-bottom: 5vh;
     user-select: none;
-    display: none;
+    /* display: none; */
+    background: #3f77ab;
+}
+.snl::after {
+    content:'';
+    background: #3f77ab;
+    height: 80%;
+    width: 90%;
+    top: 55%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    border: #000 4px solid;
+    z-index: 2;
 }
 .game {
     position: absolute;
-    right: 0;top: 50%;
-    transform: translateY(-50%);
+    left: 55%;top: 55%;
+    transform: translate(-50%,-50%) scale(0.84);
     width: 35vw;
     aspect-ratio: 1/1;
+    z-index: 3;
 }
 .snl > .game > table {
     position: absolute;
@@ -1641,10 +1655,11 @@ input:focus {
 }
 #dice {
     position: absolute;
-    top: 7.5%;
+    top: 45%;
     transform: translateY(-50%);
-    left: 0;
+    right: 7.5%;
     cursor: pointer;
+    z-index: 3;
 }
 #dice img {
     width: 4vw;
@@ -1660,6 +1675,17 @@ input:focus {
         transform: translate(-50%, -50%) scale(1)
     }
 }
+@keyframes unscale {
+    0% {
+        transform: translate(-50%, -50%) scale(1)
+    }
+    99.9% {
+        transform: translate(-50%, -50%) scale(0)
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(0)
+    }
+}
 .ladders, .snakes {
     position: absolute;
     left: 50%;
@@ -1670,12 +1696,12 @@ input:focus {
     position: absolute;
     width: 2.5vw;
 }
-#sprite {
+.sprite {
     position: absolute;
     left: 0;
     bottom: 0;
 }
-#sprite img {
+.sprite img {
     width: 3.25vw;
 }
 #cube .front {
@@ -1721,7 +1747,7 @@ input:focus {
   
   perspective: 1000px;
   perspective-origin: 50% 100%;
-  transform: scale(0.4);
+  transform: scale(0.2);
 }
 
 #cube {
@@ -1797,33 +1823,97 @@ input:focus {
 
 .tips {
     position: absolute;
-    top: 80%;
+    top: 90%;
+    left: 7.5%;
     transform: translateY(-50%);
    
     font-family: 'Jersey 10', sans-serif;
-    font-size: 1.3vw;
+    font-size: 1.2vw;
     line-height: 1.4em;
-    padding: 1vw 3vw;
+    /* text-wrap: nowrap; */
 
     color: #fff;
-    background:url(../static/imgs/aboutwin.png);
-    background-size: contain;
+    /* background:url(../static/imgs/aboutwin.png); */
+    text-shadow: #000 0 0 1.5px;
+    /* background-size: contain; */
     width: 30vw;
     height: 60vh;
-    background-repeat: no-repeat;
-}
-
-.tips img {
-
-    width: 15vw;
-    height: auto;
-    flex-shrink: 0;
-    position: absolute;
-    top: 12.75vw;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    /* background-repeat: no-repeat; */
+    z-index: 3;
 }
 .tips p {
+    text-align: left;
+    width: 22.5vw;
+}
+.dicep {
     position: absolute;
-    top: 5vw;
+    right: 7.5vw;
+    top: 22.5vw;
+    z-index: 3;
+    font-family:'Jersey 10';
+    font-size: 1.5vw;
+    transform: translateY(-50%);
+}
+.snl-head {
+    position: absolute;
+    left: 4vw;
+    top: 1vw;
+    font-family: 'Jersey 10';
+    font-size: 5vw;
+}
+.playhead {
+    position: absolute;
+    left: 7.5%;
+    z-index: 3;
+    top: 15vw;
+    font-family: 'Pixelify Sans';
+    font-size: 6vw;
+    color: #fff;
+}
+.playdesc {
+    position: absolute;
+    left: 7.5%;
+    z-index: 3;
+    top: 21vw;
+    font-family: 'Pixelify Sans';
+    font-size: 1vw;
+    color: #fff;
+}
+.turn {
+    position: absolute;
+    right: 10%;
+    z-index: 3;
+    top: 25vw;
+    font-family: 'Jersey 10';
+    font-size: 1.5vw;
+    color: #fff;
+}
+.snl-cross {
+    position: absolute;
+    right: 4vw;
+    top: 1.25vw;font-size: 4vw;
+    font-family: 'Jersey 10';
+    cursor: pointer;
+}
+.play-snl {
+    position: relative;
+    top: -25vh;
+    left: 10vw;
+    font-family: 'Jersey 10';
+    font-size: 6vw;
+}
+.playbtn {
+    position: relative;
+    top: -20vh;
+    left: 10vw;
+    font-family: 'Jersey 10';
+    font-size: 2.5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background:#37D9DE;
+    width: 15vw;
+    height: 4vw;
+    cursor: pointer;
 }
