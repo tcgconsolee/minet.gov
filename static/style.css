@@ -1416,7 +1416,7 @@ input:focus {
 }
 .contact {
     position: relative;
-    top: 80vh;
+    top: 90vh;
 }
 .cimg {
     position: absolute;
@@ -1604,6 +1604,7 @@ input:focus {
     user-select: none;
     /* display: none; */
     background: #3f77ab;
+    margin-bottom: 10vh;
 }
 .snl::after {
     content:'';

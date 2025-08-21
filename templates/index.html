@@ -373,6 +373,224 @@
             </div>
         </div>
     </div>
+    <div class="snl">
+        <div class="snl-head">
+            <p>SNAKES & LADDERS</p>
+        </div>
+        <div class="snl-cross">
+            <p>x</p>
+        </div>
+        <div class="game">
+            <table id="snl">
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <div class="ladders">
+                <img src="../static/imgs/snl/ladder.png" alt=""
+                    style="position:absolute;left: -10vw; top: 0vw;transform:scale(1.9) rotateZ(30deg);">
+                <img src="../static/imgs/snl/ladder.png" alt=""
+                    style="position:absolute;left: 9vw; top: -5vw;transform:scale(1) rotateZ(-25deg);">
+                <img src="../static/imgs/snl/ladder.png" alt=""
+                    style="position:absolute;left: 0vw; top: -16vw;transform:scale(1.4) rotateZ(45deg);">
+                <img src="../static/imgs/snl/ladder.png" alt=""
+                    style="position:absolute;left: 6vw; top: 5vw;transform:scale(1.2) rotateZ(-15deg);">
+            </div>
+            <div class="snakes">
+                <img src="../static/imgs/snl/snake1.png" alt=""
+                    style="left: 2vw;top:-6vw;transform:scale(2.4) rotateZ(100deg);">
+                <img src="../static/imgs/snl/snake2.png" alt=""
+                    style="left: -15vw;top:-10vw;transform:scale(2.4) rotateZ(-10deg);">
+                <img src="../static/imgs/snl/snake3.png" alt=""
+                    style="left: 12.5vw;top:-7vw;transform:scale(2.1) rotateZ(10deg);">
+                <img src="../static/imgs/snl/snake4.png" alt=""
+                    style="left: -8vw;top:-15vw;transform:scale(1.1) rotateZ(20deg);">
+            </div>
+            <div class="sprite" id="sprite1" style="margin-left:-0.25vw;">
+                <img src="../static/imgs/snl/pieceRed.png" alt="">
+            </div>
+            <div class="sprite" id="sprite2" style="margin-left:0.75vw;">
+                <img src="../static/imgs/snl/pieceBlue.png" alt="">
+            </div>
+        </div>
+        <div class="playhead">
+            <p>PLAY</p>
+        </div>
+        <div class="playdesc">
+            <p>snakes n ladders</p>
+        </div>
+        <div class="turn">
+            <p id="turn"></p>
+        </div>
+        <div id="dice">
+            <section class="container">
+                <div id="cube">
+                    <div class="front">
+                        <span class="dot dot1"></span>
+                    </div>
+                    <div class="back">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                    </div>
+                    <div class="right">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                        <span class="dot dot3"></span>
+                    </div>
+                    <div class="left">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                        <span class="dot dot3"></span>
+                        <span class="dot dot4"></span>
+                    </div>
+                    <div class="top">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                        <span class="dot dot3"></span>
+                        <span class="dot dot4"></span>
+                        <span class="dot dot5"></span>
+                    </div>
+                    <div class="bottom">
+                        <span class="dot dot1"></span>
+                        <span class="dot dot2"></span>
+                        <span class="dot dot3"></span>
+                        <span class="dot dot4"></span>
+                        <span class="dot dot5"></span>
+                        <span class="dot dot6"></span>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="tips" id="tips">
+            <p></p>
+        </div>
+        <div class="dicep">
+            <p>CLICK ON DICE TO ROLL</p>
+        </div>
+    </div>
+    <div class="play-snl">
+        <p>Play Snakes & Ladders (Revisioned/Reimagined)</p>
+    </div>
+    <div class="playbtn button">
+        <p>PLAY</p>
+    </div>
     <div class="contact">
         <img src="../static/imgs/contact.png" alt="" class="cbg">
         <div class="cnh">
@@ -553,7 +771,175 @@
             });
         })();
     </script>
+    <script>
+        const table = document.getElementById("snl");
+        const rows = table.rows;
+        let turn = 1;
+        let sixes = 0;
+        let sixPos;
+        document.getElementById("turn").innerHTML = `Player ${turn} to Play`
 
+        for (let r = 0; r < rows.length; r++) {
+            const cells = rows[r].cells;
+            for (let c = 0; c < cells.length; c++) {
+                let number;
+                if ((rows.length - 1 - r) % 2 === 0) {
+                    number = (rows.length - 1 - r) * 10 + c + 1;
+                } else {
+                    number = (rows.length - 1 - r) * 10 + (10 - c);
+                }
+                cells[c].innerHTML = `<p>${number}</p>`;
+            }
+        }
+
+        let position = [0, 0];
+        let isMoving = false;
+        let diceLocked = false;
+        const dice = document.getElementById("dice");
+        const sprite = [document.getElementById("sprite1"), document.getElementById("sprite2")];
+        const ladders = [[13, 34], [22, 57], [49, 68], [78, 94]];
+        const snakes = [[97, 58], [72, 51], [82, 61], [75, 54]];
+
+        function drawSprite() {
+            const pos = { x: position[turn - 1] % 10, y: Math.floor(position[turn - 1] / 10) };
+            if (pos.y % 2 === 0) {
+                sprite[turn - 1].style.left = pos.x * 3.5 + "vw";
+            } else {
+                sprite[turn - 1].style.left = (3.5 * (9 - pos.x)) + "vw";
+            }
+            sprite[turn - 1].style.bottom = pos.y * 3.5 + "vw";
+        }
+
+        function moveTo(newPos, callback) {
+            if (isMoving) return;
+            isMoving = true;
+            let step = position[turn - 1] < newPos ? 1 : -1;
+            function stepMove() {
+                if (position[turn - 1] !== newPos) {
+                    position[turn - 1] += step;
+                    drawSprite();
+                    setTimeout(stepMove, 250);
+                } else {
+                    isMoving = false;
+                    if (callback) callback();
+                }
+            }
+            stepMove();
+        }
+
+        function checkSnakeOrLadder(done) {
+            let ladder = ladders.find(coord => coord[0] - 1 === position[turn - 1]);
+            if (ladder) {
+                moveTo(ladder[1] - 1, () => checkSnakeOrLadder(done));
+                return;
+            }
+            let snake = snakes.find(coord => coord[0] - 1 === position[turn - 1]);
+            if (snake) {
+                moveTo(snake[1] - 1, () => checkSnakeOrLadder(done));
+                return;
+            }
+            if (done) done();
+        }
+        let diceRoll;
+
+        dice.addEventListener("click", () => {
+            if (isMoving || diceLocked) return;
+            diceLocked = true;
+            const cube = document.getElementById('cube');
+
+            diceRoll = Math.floor(Math.random() * 6) + 1;
+
+            if (diceRoll === 6) {
+                if (sixes === 0) sixPos = { pos: position[turn - 1], n: turn - 1 };
+                sixes++;
+                if (sixes === 3) {
+                    position[sixPos.n] = sixPos.pos;
+                    sixes = 0;
+                    sixPos = {};
+                }
+            } else {
+                sixes = 0;
+                sixPos = {};
+            }
+
+            const faceRotations = {
+                1: [0, 0],
+                2: [180, 0],
+                3: [0, -90],
+                4: [0, 90],
+                5: [-90, 0],
+                6: [90, 0]
+            };
+            const [fx, fy] = faceRotations[diceRoll];
+            const spinsX = (3 + Math.floor(Math.random() * 3)) * 360;
+            const spinsY = (3 + Math.floor(Math.random() * 3)) * 360;
+            const targetX = spinsX + fx;
+            const targetY = spinsY + fy;
+            cube.style.animation = "none";
+            cube.offsetHeight;
+            cube.style.setProperty("--rx", targetX + "deg");
+            cube.style.setProperty("--ry", targetY + "deg");
+            cube.style.animation = "spinDice 2s ease-out forwards";
+
+            setTimeout(() => {
+                let targetPos = position[turn - 1] + diceRoll;
+                if (targetPos > 99) targetPos = 99;
+                moveTo(targetPos, () => {
+                    checkSnakeOrLadder(() => {
+                        if (diceRoll !== 6 || sixes === 3) {
+                            turn = turn === 1 ? 2 : 1;
+                            document.getElementById("turn").innerHTML = `Player ${turn} to Play`;
+                        } else {
+                            document.getElementById("turn").innerHTML = `Player ${turn} gets another turn`;
+                        }
+                        diceLocked = false;
+                    });
+                });
+            }, 2000);
+        });
+
+        setInterval(() => {
+            let phrase = [
+                "Tip: Just like ladders help you up, strong passwords help you stay safe online.",
+                "Tip: Snakes pull you down, just like clicking shady links can pull your account down.",
+                "Tip: Always climb with care — think before you share personal info.",
+                "Tip: Don’t let a snake trick you — double-check before downloading anything.",
+                "Tip: A ladder is like two-factor authentication — it gives you a boost in security.",
+                "Tip: Not every shortcut is safe — avoid suspicious free offers.",
+                "Tip: Just like you avoid snakes, avoid oversharing your location online.",
+                "Tip: Strong passwords are ladders — weak ones are snakes.",
+                "Tip: Every snake has a trap, just like fake messages (phishing) online.",
+                "Tip: Ladders take effort to climb, just like keeping software updated.",
+                "Tip: Don’t trust every ladder — some links lead to snakes (scams).",
+                "Tip: Stay on the board — don’t wander to unsafe websites.",
+                "Tip: A six gets you far, but rushing online can land you in a trap.",
+                "Tip: Snakes = hackers. Don’t give them a way onto your board!",
+                "Tip: Report snakes! Just like you report harmful accounts online.",
+                "Tip: Keep your dice rolls private — keep your passwords secret.",
+                "Tip: Not every player is a friend — beware of strangers online.",
+                "Tip: A big fall hurts — so does losing access to your account.",
+                "Tip: Sharing too much online is like landing on a snake by choice.",
+                "Tip: Ladders help only if you’re careful — same goes for new apps.",
+                "Tip: Never click a ladder you don’t trust — it might actually be a snake.",
+                "Tip: Snakes can hide — use antivirus to spot them before they strike.",
+                "Tip: The board is safer when everyone plays fair — be kind online.",
+                "Tip: Winning isn’t worth it if you cheat — stay honest online too.",
+                "Tip: Like ladders, privacy settings help you stay in control.",
+                "Tip: Stay alert — the snakes (scams) are always waiting.",
+                "Tip: Always log out on shared devices — don’t leave your pawn behind.",
+                "Tip: Don’t copy someone else’s move — protect your own identity.",
+                "Tip: A safe move is better than a risky roll — think twice online.",
+                "Tip: Internet safety is the biggest ladder of them all!"
+            ][Math.floor(Math.random() * 30)]
+            document.querySelector("#tips p").innerHTML = phrase;
+        }, 5000);
+        document.getElementsByClassName("snl-cross")[0].addEventListener("click", () => {
+            document.getElementsByClassName("snl")[0].style.animation="unscale 500ms forwards"
+        })
+        document.getElementsByClassName("playbtn")[0].addEventListener("click", () => {
+            document.getElementsByClassName("snl")[0].style.animation="scale 500ms forwards"
+        })
+    </script>
 </body>
 
 </html>
