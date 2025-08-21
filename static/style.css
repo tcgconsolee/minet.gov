@@ -1900,7 +1900,8 @@ input:focus {
     top: -25vh;
     left: 10vw;
     font-family: 'Jersey 10';
-    font-size: 6vw;
+    font-size: 5vw;
+    text-wrap: nowrap;
 }
 .playbtn {
     position: relative;
