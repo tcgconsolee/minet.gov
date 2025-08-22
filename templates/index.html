@@ -529,6 +529,9 @@
             <div class="sprite" id="sprite2" style="margin-left:0.75vw;">
                 <img src="../static/imgs/snl/pieceBlue.png" alt="">
             </div>
+            <div class="end">
+                <p>Player <span id = "endspan"></span> has won</p>
+            </div>
         </div>
         <div class="playhead">
             <p>PLAY</p>
@@ -894,7 +897,16 @@
                         }
                         diceLocked = false;
                     });
-                });
+                }); 
+                setTimeout(() => {
+                    position.forEach(obj => {
+                        if(obj === 99) {
+                            diceLocked=true;
+                            document.getElementsByClassName("end")[0].style.display = "block";
+                            document.getElementById("endspan").innerHTML = turn;
+                        }
+                    })
+                }, 250*diceRoll);
             }, 2000);
         });
 
